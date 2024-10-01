@@ -13,15 +13,9 @@ String action = "READING";
 boolean dehumidifierStatus = false;
 long previousMillis = 0; 
 long interval = 60000;
-// char* fingerprint = "93:2B:7B:C8:C2:25:D2:BC:EE:FC:C8:DA:98:C5:4C:1A:A8:59:BE:39";
-// char elPriceServerAddress[] = "https://www.elprisetjustnu.se/api/v1/prices";
-// char hueServerAddress[] = "192.168.1.26";
 
 WiFiClient wifi;
 HttpClient client = HttpClient(wifi, serverAddress, port);
-
-// WiFiSSLClient wifiHTTPS;
-// HttpClient clientHTTPS = HttpClient(wifiHTTPS, hueServerAddress, 443);
 
 WiFiServer server(80);
 int DHpin = 2;
@@ -58,40 +52,6 @@ void startReading() {
   digitalWrite(DHpin, HIGH);
 }
 
-// void actionCommand(boolean command) {
-//   String postData = "{\"on\":{\"on\":" + String(command) + "\"}}";
-
-//     Serial.println("action!");
-//     clientHTTPS.beginRequest();
-//     clientHTTPS.post("https://192.168.1.26/clip/v2/resource/light/c5acd120-bd09-4dee-8763-150a7321a698");
-//     clientHTTPS.sendHeader("Content-Type", "application/json");
-//     clientHTTPS.sendHeader("Content-Length", postData.length());
-//     clientHTTPS.sendHeader("hue-application-key", HUE_API_KEY);
-//     clientHTTPS.beginBody();
-//     clientHTTPS.print(postData);
-//     clientHTTPS.endRequest();
-
-//     int statusCode = clientHTTPS.responseStatusCode();
-//     String response = clientHTTPS.responseBody();
-
-//     Serial.print("Status Code: ");
-//     Serial.println(statusCode);
-//     Serial.print("Response: ");
-//     Serial.println(response);
-    
-//     Serial.println("Request sent, waiting for response...");
-
-//     if (statusCode == -1) {
-//       Serial.println("No response.");
-//     } else {
-//       String response = clientHTTPS.responseBody();
-//       Serial.print("Status Code: ");
-//       Serial.println(statusCode);
-//       Serial.print("Response: ");
-//       Serial.println(response);
-//     }
-// }
-
 void setup() {
   Serial.begin(9600);
   buttonSetup();
@@ -109,7 +69,6 @@ void setup() {
   server.begin();
   Serial.println("Server started.");
 }
-
 
 void loop() {
 
