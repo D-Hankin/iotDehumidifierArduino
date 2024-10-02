@@ -7,7 +7,7 @@
 
 char ssid[] = SECRET_SSID;
 char password[] = SECRET_PASSWORD;
-char serverAddress[] = "192.168.1.103";
+char serverAddress[] = MACHINE_IP;
 int port = 8080;
 String action = "READING";
 boolean dehumidifierStatus = false;
@@ -66,6 +66,7 @@ void setup() {
   }
 
   Serial.println("Connected to WiFi!");
+  Serial.println(WiFi.localIP());
   server.begin();
   Serial.println("Server started.");
 }
