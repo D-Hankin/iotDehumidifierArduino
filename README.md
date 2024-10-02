@@ -48,4 +48,3 @@ Future Enhancements (Version 2)
 -------------------------------
 
 -   Full control of the dehumidifier based on real-time sensor data.
--   Improved WiFi connectivity for more stable communication between Arduino and the server.
