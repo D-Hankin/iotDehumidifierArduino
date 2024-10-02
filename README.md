@@ -42,7 +42,8 @@ Installation and Setup
 
 1.  Clone the repository to your local machine.
 2.  Set up the Arduino environment with the necessary libraries.
-3.  Modify the `application.properties` file on the server to include your email and MongoDB configuration.
+3.  Create a 'settings.h' file where you will need to store your machine ip address along with your wifi login credentials.
+4.  Modify the `application.properties` file on the server to include your email and MongoDB configuration.
 
 Future Enhancements (Version 2)
 -------------------------------
